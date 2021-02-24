@@ -7,6 +7,9 @@
 
 SRC		=	src/strlen.asm	\
 			src/strchr.asm	\
+			src/memset.asm	\
+			src/memcpy.asm	\
+			src/strcmp.asm	\
 
 AS = nasm
 
