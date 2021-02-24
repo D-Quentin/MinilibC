@@ -5,11 +5,12 @@
 ## Makefile
 ##
 
-SRC		=	src/strlen.asm	\
-			src/strchr.asm	\
-			src/memset.asm	\
-			src/memcpy.asm	\
-			src/strcmp.asm	\
+SRC		=	src/strlen.asm		\
+			src/strchr.asm		\
+			src/memset.asm		\
+			src/memcpy.asm		\
+			src/strcmp.asm		\
+			src/memmove.asm		\
 
 AS = nasm
 

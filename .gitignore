@@ -1,8 +1,4 @@
-/build/Makefile
-build/CMakeFiles
-build/CMakeCache.txt
-build/cmake_install.cmake
-build/libasm.so
+*.o
 libasm.so
 a.out
 test.c
