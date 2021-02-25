@@ -1,22 +1,32 @@
 BITS 64
-global strchr
+global rindex
 section .text
 
-strchr:
+rindex:
     xor rcx, rcx
+    xor rax, rax
+    xor r9b, r9b
     jmp my_loop
 
 my_loop:
     mov r8b, byte [rdi + rcx]
     cmp r8b, sil
-    je char_found
+    je save_pos
+continue:
     inc rcx
     cmp r8b, byte 0
-    je return_null
+    je check_return
     jmp my_loop
 
-char_found:
-    add rdi, rcx
+save_pos:
+    mov rax, rcx
+    mov r9b, byte 1
+    jmp continue
+
+check_return:
+    cmp r9b, byte 0
+    je return_null
+    add rdi, rax
     mov rax, rdi
     jmp return
 

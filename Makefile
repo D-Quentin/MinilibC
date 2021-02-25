@@ -13,6 +13,7 @@ SRC		=	src/strlen.asm		\
 			src/memmove.asm		\
 			src/strncmp.asm		\
 			src/strcasecmp.asm	\
+			src/rindex.asm		\
 
 AS = nasm
 
