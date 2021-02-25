@@ -1,8 +1,8 @@
 BITS 64
-global strcmp
+global strcasecmp
 section .text
 
-strcmp:
+strcasecmp:
     xor rcx, rcx
     jmp my_loop
 
@@ -10,6 +10,34 @@ my_loop:
     mov r8b, byte [rdi + rcx]
     mov r9b, byte [rsi + rcx]
     inc rcx
+    jmp check_caps_r8_1
+
+check_caps_r8_1:
+    cmp r8b, byte 64
+    jg check_caps_r8_2
+    jmp check_caps_r9_1
+
+check_caps_r8_2:
+    cmp r8b, byte 91
+    jl lower_caps_r8
+    jmp check_caps_r9_1
+
+lower_caps_r8:
+    add r8b, 32
+    jmp check_caps_r9_1
+
+check_caps_r9_1:
+    cmp r9b, byte 64
+    jg check_caps_r9_2
+    jmp string_equal
+
+check_caps_r9_2:
+    cmp r9b, byte 91
+    jl lower_caps_r9
+    jmp string_equal
+
+lower_caps_r9:
+    add r9b, 32
     jmp string_equal
 
 string_equal:
