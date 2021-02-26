@@ -16,6 +16,7 @@ SRC		=	src/strlen.asm		\
 			src/rindex.asm		\
 			src/strstr.asm		\
 			src/strpbrk.asm		\
+			src/strcspn.asm		\
 
 AS = nasm
 
