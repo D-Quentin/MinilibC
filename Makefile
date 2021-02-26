@@ -14,6 +14,8 @@ SRC		=	src/strlen.asm		\
 			src/strncmp.asm		\
 			src/strcasecmp.asm	\
 			src/rindex.asm		\
+			src/strstr.asm		\
+			src/strpbrk.asm		\
 
 AS = nasm
 
