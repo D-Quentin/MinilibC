@@ -4,6 +4,10 @@ section .text
 
 memmove:
     xor rcx, rcx
+    cmp rdi, 0
+    je return
+    cmp rsi, 0
+    je return
     jmp copy
 
 copy:
