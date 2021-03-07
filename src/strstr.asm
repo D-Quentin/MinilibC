@@ -6,10 +6,10 @@ strstr:
     xor rcx, rcx
     xor rax, rax
     xor r10, r10
-    cmp rdi, 0
+    cmp [rdi], byte 0
     je return_null
-    cmp rsi, 0
-    je return_null
+    cmp [rsi], byte 0
+    je string_found
     jmp my_loop
 
 my_loop:
